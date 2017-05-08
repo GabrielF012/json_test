@@ -1,4 +1,16 @@
-<h1><?php echo htmlspecialchars($_POST['prenom'])?> &nbsp; <?php echo htmlspecialchars($_POST['nom']); ?></h1>
 <form action='form.php'>
-    <p><input type="submit" name="Form"/></p>
+    <p><input type="submit" value="OK"></p>
 </form>
+<br><br>
+<?php
+  $json = file_get_contents("artiste.json");
+
+  $data = json_decode($json, true);
+
+  foreach($data['artiste'] as $artist){
+      $n = $artist['nom'];
+      $p = $artist['prenom'];
+      $s = $artist['id'];
+      echo "$p<br>$n<br>$s<br><br>";
+  }
+?>
