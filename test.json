@@ -1,0 +1,26 @@
+{
+  "artiste" : [{
+    "ID" : 1,
+    "Nom" : "Fournier",
+    "Prenom" : "Gabriel",
+    "Style" : "Abstrait"
+  } ,
+  {
+    "ID" : 2,
+    "Nom" : "Lambert",
+    "Prenom" : "Adam",
+    "Style" : "Portrait"
+  },
+  {
+    "ID" : 3,
+    "Nom" : "Pelletier",
+    "Prenom" : "Frank",
+    "Style" : "Animal"
+  },
+  {
+    "ID" : 4,
+    "Nom" : "Lachance",
+    "Prenom" : "Luc",
+    "Style" : "Abstrait"
+  }]
+}

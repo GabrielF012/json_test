@@ -1,12 +1,14 @@
 <?php
 
-$nom = "Boucher";
-$prenom = "Bob";
-$id = '3';
-
-$json = array(
-    "artiste" => array('id' => $id, 'prenom' => $prenom, 'nom' => $nom)
+$nom = "Pelletier";
+$prenom = "Lucie";
+$id = '5';
+$artistarray = array(
+  'id' => $id, 'Nom' => $nom, 'Prenom' => $prenom
 );
+
+var_dump($artistarray);
+$json['artiste'][] = $artistarray;
 
 echo json_encode($json);
 
