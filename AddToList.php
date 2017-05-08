@@ -5,8 +5,8 @@ if (!empty($_POST)){
     $nom = $_POST['nom'];
 
     if (file_exists('artiste.json')){
-      $temp = json_decode(file_get_contents("artiste.json"), true);
-      $id = count($temp['artiste']);
+      $artiste = json_decode(file_get_contents("artiste.json"), true);
+      $id = count($artiste['artiste']);
       $artiste['artiste'][] = array('id' => $id+1, 'nom' => $nom, 'prenom' => $prenom);
     } else {
       $artiste['artiste'][] = array('id' => 1, 'nom' => $nom, 'prenom' => $prenom);
@@ -15,5 +15,17 @@ if (!empty($_POST)){
     file_put_contents('artiste.json', json_encode($artiste));
   }
 
-  header("Location: form.php");
+
+$json = file_get_contents("artiste.json");
+
+$data = json_decode($json, true);
+
+foreach($data['artiste'] as $artist){
+    $n = $artist['nom'];
+    $p = $artist['prenom'];
+    $s = $artist['id'];
+    echo "$p<br>$n<br>$s<br><br>";
+}
+
+  //header("Location: form.php");
  ?>
