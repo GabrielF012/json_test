@@ -32,6 +32,7 @@
                   <th>Id</th>
                   <th>Prenom</th>
                   <th>Nom</th>
+                  <th>Style</th>
                   <th>Supprimer</th>
                 </tr>
               </thead>
@@ -43,11 +44,20 @@
             foreach($data['artiste'] as $artist){
               $n = $artist['nom'];
               $p = $artist['prenom'];
-              $s = $artist['id'];
+              $i = $artist['id'];
+              foreach($artist['style'] as $style) {
+                  $s[] = $style;
+              }
+
           echo  '<tr>';
-          echo      '<td>' .$s;'.</td>';
-          echo      '<td>' .$p;'.</td>';
-          echo      '<td>' .$n;'.</td>';
+          echo      '<td>' .$i. '</td>';
+          echo      '<td>' .$p. '</td>';
+          echo      '<td>' .$n. '</td>';
+          echo      '<td>';
+          foreach($artist['style'] as $style) {
+            echo   $style ." ";
+          }
+          echo      '</td>';
           echo      "<td><form action='DeleteArtiste.php' method='POST'/><input type='hidden' name='q' value='".$artist['id']."'/>
                     <input type='submit' value='Supprimer'></form></td>";
           echo   '</tr>';
