@@ -1,3 +1,8 @@
+<?php
+    include('function.php');
+
+?>
+
 <html>
         <head>
             <style>
@@ -55,7 +60,7 @@
           echo      '<td>' .$n. '</td>';
           echo      '<td>';
           foreach($artist['style'] as $style) {
-            echo   $style ." ";
+            echo   NomStyle($style). " ";
           }
           echo      '</td>';
           echo      "<td><form action='DeleteArtiste.php' method='POST'/><input type='hidden' name='q' value='".$artist['id']."'/>

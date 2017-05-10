@@ -12,10 +12,9 @@ function AjoutStyle($style_array){
 
 function NomStyle($style){
     $data = json_decode(file_get_contents("artiste.json"), true);
-    $id = count($data['Style']);
     foreach($data as $value){
         foreach($data['Style'] as $val){
-            if ($value == $val['id']){
+            if ($style == $val['id']){
                 return $val['nom'];
             }
         }

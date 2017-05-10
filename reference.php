@@ -27,14 +27,26 @@
 //
 //  file_put_contents('artiste.json', json_encode($artist));
 
-include('function.php');
+//include('function.php');
+//
+//$test = NomStyle(1);
+//echo $test;
 
-$data = json_decode(file_get_contents("artiste.json"), true);
+//$data = json_decode(file_get_contents("artiste.json"), true);
+//
+//foreach($data['artiste'] as $artist){
+//  foreach($artist['style'] as $style){
+//    echo NomStyle($style);
+//  }
+//}
 
-foreach($data['artiste'] as $artist){
-  foreach($artist['style'] as $style){
-    echo NomStyle($style);
-  }
-}
 
 ?>
+
+<form action="upload_file.php" method="post" enctype="multipart/form-data">
+    <p>Prenom:<input type="text" name="prenom"</p>
+    <p>Nom:<input type="text" name="nom"</p>
+    <input type="hidden" name="MAX_FILE_SIZE" value="512000"/>
+    <p>Envoyer cette image: <input name="userfile" type="file" /></p>
+    <input type="submit" value="Envoyer"/>
+</form>
