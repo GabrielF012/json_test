@@ -38,6 +38,7 @@
                   <th>Prenom</th>
                   <th>Nom</th>
                   <th>Style</th>
+                  <th>Profil</th>
                   <th>Supprimer</th>
                 </tr>
               </thead>
@@ -50,9 +51,14 @@
               $n = $artist['nom'];
               $p = $artist['prenom'];
               $i = $artist['id'];
+              $u = $artist['folder'];
+              $pp = $artist['profil'];
+              $source = "images/" .$u. "/" .$pp;
               foreach($artist['style'] as $style) {
                   $s[] = $style;
               }
+
+
 
           echo  '<tr>';
           echo      '<td>' .$i. '</td>';
@@ -63,6 +69,7 @@
             echo   NomStyle($style). " ";
           }
           echo      '</td>';
+          echo      '<td><img src="'.$source.'"/></td>';
           echo      "<td><form action='DeleteArtiste.php' method='POST'/><input type='hidden' name='q' value='".$artist['id']."'/>
                     <input type='submit' value='Supprimer'></form></td>";
           echo   '</tr>';
