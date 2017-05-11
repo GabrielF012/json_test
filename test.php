@@ -69,11 +69,10 @@
             echo   NomStyle($style). " ";
           }
           echo      '</td>';
-          echo      '<td><img src="'.$source.'"/></td>';
+          echo      '<td><img src="'.$source.'" height="128px" width="128px"/></td>';
           echo      "<td><form action='DeleteArtiste.php' method='POST'/><input type='hidden' name='q' value='".$artist['id']."'/>
                     <input type='submit' value='Supprimer'></form></td>";
           echo   '</tr>';
-                  //echo "$p<br>$n<br>$s<br><br>";
           echo    '</tbody>';
             }
           ?>

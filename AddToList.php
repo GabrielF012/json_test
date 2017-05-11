@@ -4,7 +4,6 @@ include('function.php');
 
 if (!empty($_POST)){
 
-  //$data = json_decode(file_get_contents("artiste.json"), true);
     $prenom = $_POST['prenom'];
     $nomf = $_POST['nom'];
     $pre = substr($prenom, 0, 3);
